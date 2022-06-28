@@ -1,0 +1,26 @@
+{
+    "single": {
+        "horizontal": "─",
+        "vertical": "│",
+        "topLeft": "┌",
+        "topRight": "┐",
+        "bottomLeft": "└",
+        "bottomRight": "┘"
+    },
+    "double": {
+        "horizontal": "═",
+        "vertical": "║",
+        "topLeft": "╔",
+        "topRight": "╗",
+        "bottomLeft": "╚",
+        "bottomRight": "╝"
+    },
+    "curved": {
+        "horizontal": "─",
+        "vertical": "│",
+        "topLeft": "╭",
+        "topRight": "╮",
+        "bottomLeft": "╰",
+        "bottomRight": "╯"
+    }
+}

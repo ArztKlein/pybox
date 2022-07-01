@@ -1,12 +1,23 @@
 import json
 
 class Pybox:
-    def __init__(self, *, style="single"):
+    SHADOWS = {
+        "light": "░",
+        "medium": "▒",
+        "dark": "▓"
+    }
+    
+    def __init__(self, *, style="single", shadow=False, shadow_style: str="light"):
         """
         Style:
             Either 'single', 'double', or 'curved'. 
             Is 'single' by default. 
+        shadow_style:
+            Either 'light', 'medium', or 'dark'
         """
+
+        self.shadow = shadow
+        self.shadow_ch = self.SHADOWS[shadow_style]
 
         chars = Pybox.__read_style(style)
 
@@ -38,6 +49,10 @@ class Pybox:
 
         out += f"{self.top_left}{self.horizontal*length}{self.top_right}"
         out += f"\n{self.vertical}{text}{self.vertical}"
+        if self.shadow:
+            out += self.shadow_ch
         out += f"\n{self.bottom_left}{self.horizontal*length}{self.bottom_right}"
+        if self.shadow:
+            out += f"{self.shadow_ch}\n {self.shadow_ch*(length+2)}"
 
         return out
